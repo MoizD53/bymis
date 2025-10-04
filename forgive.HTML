@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgive Me ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h1 {
+      font-size: 3rem;
+      color: red;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    button {
+      font-size: 1.2rem;
+      margin: 15px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background: #28a745;
+      color: white;
+    }
+    .yes:hover {
+      background: #218838;
+    }
+    .no {
+      background: #dc3545;
+      color: white;
+    }
+    .no:hover {
+      background: #c82333;
+    }
+
+    /* Celebration Page */
+    #lovePage {
+      background: black;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #lovePage h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 20px red, 0 0 40px pink;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 20px red, 0 0 40px pink; }
+      to { text-shadow: 0 0 40px yellow, 0 0 80px red; }
+    }
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: white;
+      animation: explode 1s ease-out infinite;
+    }
+    @keyframes explode {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <section id="page1" class="active">
+    <h1>❤️ My Love, Please Forgive Me 🙏</h1>
+    <p>I know I made mistakes... but I promise to make it right 💖</p>
+    <button class="yes" onclick="showPage('lovePage')">Yes 😘</button>
+    <button class="no" onclick="showPage('page2')">No 😔</button>
+  </section>
+
+  <!-- Page 2 -->
+  <section id="page2">
+    <h1>🥺 Still Not Forgiven?</h1>
+    <p>Please baby... I can’t live without your smile 💕</p>
+    <button class="yes" onclick="showPage('lovePage')">Okay, I Forgive You 😘</button>
+    <button class="no" onclick="showPage('page3')">Still No 😞</button>
+  </section>
+
+  <!-- Page 3 -->
+  <section id="page3">
+    <h1>💔 You really won’t forgive me?</h1>
+    <p>I love you more than words can say... please give me one last chance 💘</p>
+    <button class="yes" onclick="showPage('lovePage')">Yes, I Forgive You ❤️</button>
+    <button class="no" onclick="showPage('page3')">No 😔</button>
+  </section>
+
+  <!-- Celebration Page -->
+  <section id="lovePage">
+    <h1>🎆 I LOVE YOU ❤️ 🎆</h1>
+    <!-- Fireworks -->
+    <div class="firework" style="top:20%; left:30%; background:red;"></div>
+    <div class="firework" style="top:40%; left:60%; background:yellow;"></div>
+    <div class="firework" style="top:70%; left:50%; background:blue;"></div>
+    <div class="firework" style="top:30%; left:80%; background:green;"></div>
+    <div class="firework" style="top:60%; left:20%; background:pink;"></div>
+  </section>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
